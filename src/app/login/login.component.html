@@ -1,0 +1,75 @@
+<div class="wrapper">
+    <!--login section -->
+    <div [@routerTransition] class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
+        <div class="container">
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
+                    <div class="card card-register">
+                        <h3 class="title">Welcome</h3>
+                        <div class="social-line text-center">
+                            <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
+                        <br>
+                        <form class="form-horizontal" class="login" [formGroup]="loginForm" (ngSubmit)="login()">
+                            <div class="form-group row" [ngClass]="{'has-error': (loginForm.get('email').touched || loginForm.get('email').dirty) &&
+                    !loginForm.get('email').valid }">
+                                <label class="col-sm-3">
+                                    <strong>Email * </strong>
+                                </label>
+                                <div class="col-sm-8">
+                                    <!-- <i style="position: relative;top: 24px;right: -300px;cursor: pointer;" class="fa fa-envelope"></i> -->
+                                    <input type="text" formControlName="email" class="form-control form-control-sm" placeholder="Your Email">
+                                    <span class="text-danger" *ngIf="(loginForm.get('email').touched || loginForm.get('email').dirty) && 
+                            loginForm.get('email').errors">
+                                        <span *ngIf="loginForm.get('email').errors.required">Please enter your email address.</span>
+                                        <br>
+                                        <span *ngIf="loginForm.get('email').errors.email">Please enter a valid email address.</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group row" [ngClass]="{'has-error': (loginForm.get('password').touched || loginForm.get('password').dirty)
+                         &&
+                    !loginForm.get('password').valid }">
+                                <label class="col-sm-3">
+                                    <strong>Password * </strong>
+                                </label>
+
+                                <div class="col-sm-8">
+                                    <!-- <i style="position: relative;top: 24px;right: -280px;cursor: pointer;" class="fa fa-user"></i> -->
+                                    <input type="{{password ? 'text' : 'password' }}" formControlName="password" class="form-control form-control-sm" placeholder="Your Password"
+                                        required>
+                                    <span class="form-control-password" style="float:right;" (click)="togglePassword()">{{password ? 'Hide': 'Show'}}</span>
+                                    <span class="text-danger" *ngIf="(loginForm.get('password').touched || loginForm.get('password').dirty) && 
+    loginForm.get('password').errors">
+                                        <span *ngIf="loginForm.get('password').errors.required">Please enter your password.</span>
+                                        <span *ngIf="loginForm.get('password').errors.minlength">The password must be longer than 4 characters.</span>
+                                        <span *ngIf="loginForm.get('password').errors.maxlength">The password must be not longer than 30 characters.</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success active" [disabled]="!loginForm.valid" style="margin-right: 8px; cursor: pointer;">Login</button>
+                            </div>
+                        </form>
+                        <div class="forgot">
+                            <a [routerLink]="['/login']" class="btn btn-link btn-danger">Forgot password?</a>
+                        </div>
+                    </div>
+                    <div class="col text-center" routerLinkActive="active">
+                        <a [routerLink]="['/register']" class="btn btn-outline-neutral btn-round btn-lg">View Register Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
