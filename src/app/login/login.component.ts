@@ -11,7 +11,7 @@ import { AuthService } from '../shared/auth.service';
   styles: [`
     .form-control-password {
       position: relative;
-      top: -27px;
+      top: -29px;
       left: -4px;
       cursor: pointer;
   },
