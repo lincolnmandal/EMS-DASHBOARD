@@ -16,8 +16,9 @@ import { ContactComponent } from './contact/contact.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AdminService } from './shared/stepper.service';
+import { EmployeeService } from './shared/stepper.service';
 import { AuthService } from './shared/auth.service';
+import { CustomerListComponent } from './customer/customer-list.component';
 
 @NgModule({
   imports: [
@@ -39,9 +40,10 @@ import { AuthService } from './shared/auth.service';
     ContactComponent,
     LoginComponent,
     RegisterComponent,
+    CustomerListComponent
   ],
 
-  providers: [AdminService,AuthService ],
+  providers: [EmployeeService,AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
