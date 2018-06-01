@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
     selector: 'app-navbar',
@@ -7,10 +8,15 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+    isloginSuceeded: boolean = false;
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(
+        public location: Location, 
+        private element : ElementRef,
+        private authService: AuthService,
+    ) {
         this.sidebarVisible = false;
     }
 
@@ -18,6 +24,13 @@ export class NavbarComponent implements OnInit {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
     }
+
+    ngAfterViewInit() {
+        this.authService.onLoginSuccess.subscribe(x => {
+          this.isloginSuceeded = x !== undefined;
+        })
+      }
+
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const html = document.getElementsByTagName('html')[0];
