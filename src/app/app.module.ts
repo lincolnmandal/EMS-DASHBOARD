@@ -19,6 +19,8 @@ import { RegisterComponent } from './register/register.component';
 import { EmployeeService } from './shared/stepper.service';
 import { AuthService } from './shared/auth.service';
 import { CustomerListComponent } from './customer/customer-list.component';
+import { DetailComponent } from './customer/details/detail.component';
+import { EmployerDetailGuard } from './customer/details/customer-details-guard';
 
 @NgModule({
   imports: [
@@ -40,10 +42,11 @@ import { CustomerListComponent } from './customer/customer-list.component';
     ContactComponent,
     LoginComponent,
     RegisterComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    DetailComponent
   ],
 
-  providers: [EmployeeService,AuthService ],
+  providers: [EmployeeService, AuthService, EmployerDetailGuard,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
