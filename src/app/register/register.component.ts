@@ -3,7 +3,7 @@ import { FormBuilder, Validators, FormGroup, } from '@angular/forms';
 import { Router } from '@angular/router';
 import { trigger, transition, animate, style, state } from "@angular/animations";
 import { routerTransition } from '../router.animations';
-import { AdminService } from '../shared/stepper.service';
+import { EmployeeService } from '../shared/stepper.service';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { AdminService } from '../shared/stepper.service';
     styles: [`
     .form-control-password {
       position: relative;
-      top: -27px;
+      top: -29px;
       left: -4px;
       cursor: pointer;
   },
@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     constructor(
         private fb: FormBuilder,
         private router: Router,
-        private adminService: AdminService,
+        private adminService: EmployeeService,
     ) {}
     
     ngOnInit() {

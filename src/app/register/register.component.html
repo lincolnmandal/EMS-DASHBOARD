@@ -1,17 +1,18 @@
 <div class="wrapper">
     <div [@routerTransition] class="section section-image section-register" style="background-image: url('assets/img/login-image.jpg');">
         <div class="container">
-            <div class="card-header" style="color: red;">
-                <h3 class="text-center">Create a new registration form</h3>
-            </div>
             <br>
             <!-- start reactive form -->
             <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
-                <div>
+                <div style="background-color: #0b8e62; color: white;">
                     <div class="col-sm-6 col-sm-12">
                         <div class="row">
-                            <div class="col-sm-6" style="background-color: #FF8F5E">
-
+                            <div class="col-sm-12">
+                                <h3 class="text-center">Create a new registration form</h3>
+                                <br>
+                                <br>
+                            </div>
+                            <div class="col-sm-6">
                                 <!-- start firstName -->
                                 <div class="form-group row" [ngClass]="{'has-error': (registerForm.get('firstName').touched || registerForm.get('firstName').dirty) &&
                   !registerForm.get('firstName').valid }">
@@ -19,7 +20,7 @@
                                         <strong>First Name * </strong>
                                     </label>
                                     <div class="col-sm-8">
-                                        <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-user"></i>
+                                        <!-- <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-user"></i> -->
                                         <input type="text" formControlName="firstName" class="form-control form-control-sm" placeholder="Your firstName">
                                         <span class="text-default" *ngIf="(registerForm.get('firstName').touched || registerForm.get('firstName').dirty) && 
                        registerForm.get('firstName').errors">
@@ -37,7 +38,7 @@
                                         <strong>Last Name * </strong>
                                     </label>
                                     <div class="col-sm-8">
-                                        <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-user"></i>
+                                        <!-- <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-user"></i> -->
                                         <input type="text" formControlName="lastName" class="form-control form-control-sm" placeholder="Your lastName">
                                         <span class="text-default" *ngIf="(registerForm.get('lastName').touched || registerForm.get('lastName').dirty) && 
                       registerForm.get('lastName').errors">
@@ -55,7 +56,7 @@
                                         <strong>Email * </strong>
                                     </label>
                                     <div class="col-sm-8">
-                                        <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-envelope"></i>
+                                        <!-- <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-envelope"></i> -->
                                         <input type="text" formControlName="email" class="form-control form-control-sm" placeholder="Your Email">
                                         <span class="text-default" *ngIf="(registerForm.get('email').touched || registerForm.get('email').dirty) && 
                       registerForm.get('email').errors">
@@ -77,7 +78,7 @@
                                         <!-- <i style="position: relative;top: 24px;right: -300px;cursor: pointer;" class="fa fa-eye"></i> -->
                                         <input type="{{password ? 'text' : 'password' }}" formControlName="password" class="form-control form-control-sm" placeholder="Your Password"
                                             required>
-                                        <span class="form-control-password" style="float:right;" (click)="togglePassword()">{{password ? 'Hide': 'Show'}}</span>
+                                        <span class="form-control-password" style="float:right; color: black;" (click)="togglePassword()">{{password ? 'Hide': 'Show'}}</span>
                                         <span class="text-default" *ngIf="(registerForm.get('password').touched || registerForm.get('password').dirty) && 
                       registerForm.get('password').errors">
                                             <span *ngIf="registerForm.get('password').errors.required">Please enter your password.</span>
@@ -89,7 +90,7 @@
                                 <!-- end password -->
 
                             </div>
-                            <div class="col-sm-6" style="background-color: #FF8F5E">
+                            <div class="col-sm-6">
 
                                 <!-- start role -->
                                 <div class="form-group row" [ngClass]="{'has-error': (registerForm.get('role').touched || registerForm.get('role').dirty) &&
@@ -98,7 +99,7 @@
                                         <strong>Role * </strong>
                                     </label>
                                     <div class="col-sm-8">
-                                        <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-user-plus"></i>
+                                        <!-- <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-user-plus"></i> -->
                                         <input type="text" formControlName="role" class="form-control form-control-sm" placeholder="Your role">
                                         <span class="text-default" *ngIf="(registerForm.get('role').touched || registerForm.get('role').dirty) && 
                    registerForm.get('role').errors">
@@ -116,7 +117,7 @@
                                         <strong>Color * </strong>
                                     </label>
                                     <div class="col-sm-8">
-                                        <i style="position: relative;top: 28px;right: -300px;cursor: pointer; font-size: 23px;" class="fa fa-check-circle-o fa-5x text-success"></i>
+                                        <!-- <i style="position: relative;top: 28px;right: -300px;cursor: pointer; font-size: 23px;" class="fa fa-check-circle-o fa-5x text-success"></i> -->
                                         <input type="text" formControlName="color" class="form-control form-control-sm" placeholder="Your color">
                                         <span class="text-default" *ngIf="(registerForm.get('color').touched || registerForm.get('color').dirty) && 
                   registerForm.get('color').errors">
@@ -133,7 +134,7 @@
                                         <strong>country * </strong>
                                     </label>
                                     <div class="col-sm-8">
-                                        <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-flag"></i>
+                                        <!-- <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-flag"></i> -->
                                         <input type="text" formControlName="country" class="form-control form-control-sm" placeholder="Your country">
                                         <span class="text-default" *ngIf="(registerForm.get('country').touched || registerForm.get('country').dirty) && 
                   registerForm.get('country').errors">
@@ -167,11 +168,16 @@
                 <!-- start actions -->
                 <div class="text-center">
                     <button type="submit" class="btn btn-success active" style="margin-right: 8px;cursor:pointer;" [disabled]="!registerForm.valid">Register</button>
-                    <button class="btn btn-warning active" style="cursor:pointer;" (click)="cancel()">Cancel</button>
+                    <button class="btn btn-warning" style="cursor:pointer;" (click)="cancel()">Cancel</button>
                 </div>
                 <!-- end actions -->
             </form>
             <!-- end reactive form -->
+            <br>
+            <p style="color: white; text-align:center">Or</p>
+            <div class="col text-center" routerLinkActive="active">
+                <a [routerLink]="['/login']" class="btn btn-outline-neutral btn-round btn-lg">View login Page</a>
+            </div>
         </div>
     </div>
 </div>
