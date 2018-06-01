@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { ADMIN_DB } from './mock-list';
-import { IAdmins } from './interface';
+import { IEmployee } from './interface';
 
 @Injectable()
 export class AuthService {
     onLoginSuccess = new Subject();
-    private hasLoggedin: IAdmins;
+    private hasLoggedin: IEmployee;
 
     get getCurrentUser() {
         return this.hasLoggedin;
