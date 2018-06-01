@@ -1,0 +1,29 @@
+<div class="wrapper">
+    <div [@routerTransition] class="section section-image section-table" style="background-image: url('assets/img/login-image.jpg');">
+        <br>
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of employees">
+                        <td> {{row.id}} </td>
+                        <td> {{row.email}} </td>
+                        <td> {{row.password}} </td>
+                        <td> {{row.firstName}} </td>
+                        <td> {{row.lastName}}</td>
+                        <td> {{row.role}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
