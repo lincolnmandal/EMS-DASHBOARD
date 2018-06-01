@@ -1,26 +1,41 @@
 <div class="wrapper">
-    <div [@routerTransition] class="section section-image section-table" style="background-image: url('assets/img/login-image.jpg');">
+    <div [@routerTransition] class="section section-image section-table" style="background-image: url('assets/img/joshua-stannard.jpg');">
         <br>
         <div class="container">
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
+                        <th>
+                            <button class="btn btn-primary" (click)="toggleImage()">
+                                {{ showImage ? "Hide": "Show" }} Image
+                            </button>
+                        </th>
                         <th scope="col">Email</th>
                         <th scope="col">Password</th>
                         <th scope="col">FirstName</th>
                         <th scope="col">LastName</th>
                         <th scope="col">Role</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Country</th>
+
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let row of employees">
-                        <td> {{row.id}} </td>
+                        <td>
+                            <a [routerLink]="['/customers', row.id]">
+                                <img *ngIf="showImage" [src]="row.imageUrl" [title]="row.firstName" [style.width.px]="imageWidth">
+                            </a>
+                        </td>
                         <td> {{row.email}} </td>
                         <td> {{row.password}} </td>
                         <td> {{row.firstName}} </td>
                         <td> {{row.lastName}}</td>
                         <td> {{row.role}} </td>
+                        <td> {{row.color}} </td>
+                        <td> {{row.status}} </td>
+                        <td> {{row.country}} </td>
                     </tr>
                 </tbody>
             </table>

@@ -34,8 +34,9 @@ animations: [routerTransition()]
 })
 export class CustomerListComponent implements OnInit {
 
-    customerForm: FormGroup;
     employees = {};
+    imageWidth: number = 50;
+    showImage: boolean = true;
 
     constructor(
         public employeeService: EmployeeService,
@@ -49,6 +50,10 @@ export class CustomerListComponent implements OnInit {
             .subscribe(d => {
                 this.employees = d;
             });
+    }
+    
+    toggleImage(): void {
+        this.showImage = !this.showImage;
     }
 
 }
