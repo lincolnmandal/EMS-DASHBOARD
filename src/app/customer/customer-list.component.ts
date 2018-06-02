@@ -1,6 +1,6 @@
 import {
     Component, OnInit, ComponentFactoryResolver, ViewChildren,
-    ViewContainerRef, QueryList, AfterViewInit, ViewChild, ComponentFactory
+    ViewContainerRef, QueryList, AfterViewInit, ViewChild, ComponentFactory, Input
 } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 
@@ -29,21 +29,20 @@ import { routerTransition } from '../router.animations';
         color: snow;
     }
 `],
-animations: [routerTransition()]
-
 })
 export class CustomerListComponent implements OnInit {
 
-    employees = {};
+    employees = [];
     imageWidth: number = 50;
     showImage: boolean = true;
+    @Input() order: IEmployee;
 
     constructor(
         public employeeService: EmployeeService,
         private route: ActivatedRoute,
         private router: Router,
         private resolver: ComponentFactoryResolver,
-    ) {  }
+    ) { }
 
     ngOnInit() {
         this.employeeService.getEmployees()
@@ -51,9 +50,12 @@ export class CustomerListComponent implements OnInit {
                 this.employees = d;
             });
     }
-    
+
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
 
+    showDetails() {
+
+    }
 }

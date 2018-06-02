@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <div [@routerTransition] class="section section-image section-table" style="background-image: url('assets/img/joshua-stannard.jpg');">
+    <div class="section section-image section-table" style="background-image: url('assets/img/joshua-stannard.jpg');">
         <br>
         <div class="container">
             <table class="table table-bordered">
@@ -30,7 +30,11 @@
                         </td>
                         <td> {{row.email}} </td>
                         <td> {{row.password}} </td>
-                        <td> {{row.firstName}} </td>
+                        <td>
+                            <a (click)="showDetails()">
+                                {{row.firstName}}
+                            </a>
+                        </td>
                         <td> {{row.lastName}}</td>
                         <td> {{row.role}} </td>
                         <td> {{row.color}} </td>
