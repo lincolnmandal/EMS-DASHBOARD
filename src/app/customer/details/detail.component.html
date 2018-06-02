@@ -1,74 +1,78 @@
-<div class="container">
-    <h4>{{pageTitle}}</h4>
-    <br>
-    <br>
-    <div class="container" *ngIf="childData" style="background: gold;">
-        <h4>
-            <b>Employee Details Here</b>
-        </h4>
-        <div class="row">
-            <div class="col-md-12">
+<div class="wrapper" style="color: white;">
+    <div class="section section-image section-table" style="background-image: url('assets/img/Switzerland-Snow.jpg');">
+        <br>
+        <div class="container">
+            <h4 class="text-center">{{pageTitle}}</h4>
+            <br>
+            <div class="container" *ngIf="order">
                 <div class="row">
-                    <div class="col-md-3">
-                        <p>
-                            <strong>Id: </strong> {{childData.id}} </p>
-                    </div>
-                </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-3">
+                                <p>
+                                    <strong>Id * </strong> {{order.id}}</p>
+                            </div>
+                            <div class="col-md-5">
+                                <p>
+                                    <strong>Image * </strong> {{order.imageUrl}} </p>
+                            </div>
+                        </div>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <p>
-                            <strong>Password: </strong> {{childData.password}}</p>
-                    </div>
-                    <div class="col-md-5">
-                        <p>
-                            <strong>Email: </strong> {{childData.email}}</p>
-                    </div>
-                </div>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-3">
+                                <p>
+                                    <strong>Password * </strong> {{order.password}}</p>
+                            </div>
+                            <div class="col-md-5">
+                                <p>
+                                    <strong>Email * </strong> {{order.email}}</p>
+                            </div>
+                        </div>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <p>
-                            <strong>First Name: </strong> {{childData.firstName}}</p>
-                    </div>
-                    <div class="col-md-5">
-                        <p>
-                            <strong>Last Name: </strong> {{childData.lastName}}</p>
-                    </div>
-                </div>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-3">
+                                <p>
+                                    <strong>First Name * </strong> {{order.firstName}}</p>
+                            </div>
+                            <div class="col-md-5">
+                                <p>
+                                    <strong>Last Name * </strong> {{order.lastName}}</p>
+                            </div>
+                        </div>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <p>
-                            <strong>Role: </strong> {{childData.role}} </p>
-                    </div>
-                    <div class="col-md-5">
-                        <p>
-                            <strong>Color: </strong> {{childData.color}}</p>
-                    </div>
-                </div>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-3">
+                                <p>
+                                    <strong>Role * </strong> {{order.role}} </p>
+                            </div>
+                            <div class="col-md-5">
+                                <p>
+                                    <strong>Color * </strong> {{order.color}}</p>
+                            </div>
+                        </div>
 
-                <div class="row">
-                    <div class="col-md-3">
-                        <p>
-                            <strong>Country: </strong> {{childData.country}} </p>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-3">
+                                <p>
+                                    <strong>Country * </strong> {{order.country}} </p>
+                            </div>
+                            <div class="col-md-5">
+                                <p>
+                                    <strong>Status * </strong> {{order.status}}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-5">
-                        <p>
-                            <strong>Status: </strong>
-                            <span style="display: inline-block;" class="animated label" [ngClass]="{ ' label-info':childData?.status==1,
-                            ' label-warning':childData?.status==2,
-                            ' label-danger':childData?.status==3,
-                            ' label-success':childData?.status==4}">
-                                {{childData.status==1 ? 'Verified' : childData.status==2? 'InActive': childData.status==3 ? 'Rejected': childData.status==4?
-                                'Active':''}}
-                            </span>
-                        </p>
-                    </div>
+                    <hr>
                 </div>
             </div>
-            <hr>
+            <br>
+            <button class='btn btn-danger' style="float: right;" (click)='onBack()'>Go to Back</button>
         </div>
     </div>
-    <button class='btn btn-default' (click)='onBack()'>Back</button>
 </div>
