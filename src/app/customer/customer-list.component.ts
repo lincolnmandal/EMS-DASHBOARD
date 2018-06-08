@@ -32,30 +32,30 @@ import { routerTransition } from '../router.animations';
 })
 export class CustomerListComponent implements OnInit {
 
-    employees = [];
+    employees: IEmployee[];
     imageWidth: number = 50;
-    showImage: boolean = true;
-    @Input() order: IEmployee;
+    showImage: boolean = false;
+    selectedEmployeeId: number = null;
 
     constructor(
         public employeeService: EmployeeService,
-        private route: ActivatedRoute,
         private router: Router,
-        private resolver: ComponentFactoryResolver,
     ) { }
 
     ngOnInit() {
         this.employeeService.getEmployees()
-            .subscribe(d => {
-                this.employees = d;
-            });
+            .subscribe(employees => this.employees = employees);
     }
 
     toggleImage(): void {
         this.showImage = !this.showImage;
     }
 
-    showDetails() {
+    onselect(employee) {
+        this.selectedEmployeeId = employee.id;
+    }
 
+    onBack() {
+        this.router.navigate(['login']);
     }
 }

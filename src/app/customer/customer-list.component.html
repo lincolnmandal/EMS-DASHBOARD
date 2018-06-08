@@ -1,48 +1,51 @@
-<div class="wrapper">
+<div class="wrapper" style="color: azure;">
     <div class="section section-image section-table" style="background-image: url('assets/img/joshua-stannard.jpg');">
         <br>
         <div class="container">
-            <table class="table table-bordered">
+                <p *ngIf="!employees"><em>Loading...</em></p>
+            <table class="table table-striped table-bordered"  *ngIf="employees">
                 <thead>
                     <tr>
+                        <th>
+                            ID
+                        </th>
                         <th>
                             <button class="btn btn-primary" (click)="toggleImage()">
                                 {{ showImage ? "Hide": "Show" }} Image
                             </button>
                         </th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Password</th>
-                        <th scope="col">FirstName</th>
-                        <th scope="col">LastName</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Color</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Country</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Role</th>
+                        <th>Color</th>
+                        <th>Status</th>
+                        <th>Country</th>
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr *ngFor="let row of employees">
+                <tbody style="cursor: pointer;">
+                    <tr *ngFor="let employee of employees" [routerLink]="['/customers', employee.id]" (click)="onSelect(employee)">
+                        <td>{{employee.id}}</td>
                         <td>
-                            <a [routerLink]="['/customers', row.id]">
-                                <img *ngIf="showImage" [src]="row.imageUrl" [title]="row.firstName" [style.width.px]="imageWidth">
-                            </a>
+                            <!-- <a [routerLink]="['/customers', employee.id]" (click)="onSelect(employee)"> -->
+                                <img *ngIf="showImage" [src]="employee.imageUrl" [title]="employee.firstName" [style.width.px]="imageWidth">
+                            <!-- </a> -->
                         </td>
-                        <td> {{row.email}} </td>
-                        <td> {{row.password}} </td>
-                        <td>
-                            <a (click)="showDetails()">
-                                {{row.firstName}}
-                            </a>
-                        </td>
-                        <td> {{row.lastName}}</td>
-                        <td> {{row.role}} </td>
-                        <td> {{row.color}} </td>
-                        <td> {{row.status}} </td>
-                        <td> {{row.country}} </td>
+                        <td> {{employee.email}} </td>
+                        <td> {{employee.password}} </td>
+                        <td>{{employee.firstName}}</td>
+                        <td> {{employee.lastName}}</td>
+                        <td> {{employee.role}} </td>
+                        <td> {{employee.color}} </td>
+                        <td> {{employee.status}} </td>
+                        <td> {{employee.country}} </td>
                     </tr>
                 </tbody>
             </table>
+            <br>
+            <button class='btn btn-danger' style="float: right;" (click)='onBack()'>Go to Back</button>
         </div>
     </div>
 </div>
