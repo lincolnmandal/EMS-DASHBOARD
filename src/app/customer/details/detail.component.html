@@ -1,78 +1,73 @@
-<div class="wrapper" style="color: white;">
+<div class="wrapper" style="color: azure;">
     <div class="section section-image section-table" style="background-image: url('assets/img/Switzerland-Snow.jpg');">
         <br>
         <div class="container">
-            <h4 class="text-center">{{pageTitle}}</h4>
+            <h4 class="text-center" *ngIf="employee">{{pageTitle}} - {{employee.id}}</h4>
             <br>
-            <div class="container" *ngIf="order">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-3">
-                                <p>
-                                    <strong>Id * </strong> {{order.id}}</p>
+            <div class="container-inner">
+                <div *ngIf="employee">
+                    <dl class="row">
+                        <div class="col-md-4">
+                            <dd class="col-sm-6">
+                                <img [src]="employee.imageUrl" [style.width.px]="imageWidth">
+                            </dd>
+                        </div>
+
+                        <div class="col-md-4">
+                            <!-- <div class="form-group row">
+                                <dt class="col-sm-3">ID</dt>
+                                <dd class="col-sm-6">{{employee.id}}</dd>
+                            </div> -->
+
+                            <div class="form-group row">
+                                <dt class="col-sm-3">Email</dt>
+                                <dd class="col-sm-6">{{employee.email}}</dd>
                             </div>
-                            <div class="col-md-5">
-                                <p>
-                                    <strong>Image * </strong> {{order.imageUrl}} </p>
+                            
+                            <div class="form-group row">
+                                <dt class="col-sm-3">Password</dt>
+                                <dd class="col-sm-6">{{employee.password}}</dd>
+                            </div>
+                            <div class="form-group row">
+                                <dt class="col-sm-3">FirstName</dt>
+                                <dd class="col-sm-6">{{employee.firstName}}</dd>
+                            </div>
+
+                            <div class="form-group row">
+                                <dt class="col-sm-3">LastName</dt>
+                                <dd class="col-sm-6">{{employee.lastName}}</dd>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-3">
-                                <p>
-                                    <strong>Password * </strong> {{order.password}}</p>
-                            </div>
-                            <div class="col-md-5">
-                                <p>
-                                    <strong>Email * </strong> {{order.email}}</p>
-                            </div>
-                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group row">
 
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-3">
-                                <p>
-                                    <strong>First Name * </strong> {{order.firstName}}</p>
+                                <dt class="col-sm-3">Role</dt>
+                                <dd class="col-sm-6">{{employee.role}}</dd>
                             </div>
-                            <div class="col-md-5">
-                                <p>
-                                    <strong>Last Name * </strong> {{order.lastName}}</p>
-                            </div>
-                        </div>
+                            <div class="form-group row">
 
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-3">
-                                <p>
-                                    <strong>Role * </strong> {{order.role}} </p>
+                                <dt class="col-sm-3">Color</dt>
+                                <dd class="col-sm-6">{{employee.color}}</dd>
                             </div>
-                            <div class="col-md-5">
-                                <p>
-                                    <strong>Color * </strong> {{order.color}}</p>
-                            </div>
-                        </div>
+                            <div class="form-group row">
 
-                        <div class="row">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-3">
-                                <p>
-                                    <strong>Country * </strong> {{order.country}} </p>
+                                <dt class="col-sm-3">Status</dt>
+                                <dd class="col-sm-6">{{employee.status}}</dd>
                             </div>
-                            <div class="col-md-5">
-                                <p>
-                                    <strong>Status * </strong> {{order.status}}
-                                </p>
+                            <div class="form-group row">
+
+                                <dt class="col-sm-3">Country</dt>
+                                <dd class="col-sm-6">{{employee.country}}</dd>
                             </div>
+
+
                         </div>
-                    </div>
-                    <hr>
+                    </dl>
                 </div>
+                <br>
+                <button class='btn btn-danger' style="float: right;" (click)='onBack()'>Go to Back</button>
             </div>
-            <br>
-            <button class='btn btn-danger' style="float: right;" (click)='onBack()'>Go to Back</button>
         </div>
     </div>
 </div>
