@@ -1,6 +1,6 @@
 <div class="wrapper">
     <!--login section -->
-    <div [@routerTransition] class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
+    <div [@routerTransition] class="section section-image section-login" style="background-image: url('assets/img/uriel-soberanes.jpg');">
         <div class="container">
             <br>
             <br>
@@ -60,18 +60,23 @@
                                     </span>
                                 </div>
                             </div>
+                            <hr>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-success active" [disabled]="!loginForm.valid" style="margin-right: 8px; cursor: pointer;">Login</button>
+                                <button type="submit" class="btn btn-success active" [disabled]="!loginForm.valid" style="margin-right: 8px; cursor: pointer;">
+                                    <i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
+                                <button class="btn btn-warning" style="cursor:pointer;" (click)="cancel()">
+                                    <i class="fa fa-arrow-circle-right fa-lg"></i> Cancel</button>
                             </div>
                         </form>
                         <div class="forgot">
                             <a [routerLink]="['/login']" class="btn btn-danger">Forgot password?</a>
                         </div>
                     </div>
-                    <br>
-                    <p style="color: white; text-align: center;">Or</p>
-                    <div class="col text-center" routerLinkActive="active">
-                        <a [routerLink]="['/register']" class="btn btn-outline-neutral btn-round btn-lg">View Register Page</a>
+                    <div style="color: white;" class="text-center" routerLinkActive="active">
+                        <p>Go to register Page:
+                            <a class="btn btn-outline-neutral" [routerLink]="['/register']">
+                                <i class="fa fa-registered"></i> View Register</a>
+                        </p>
                     </div>
                 </div>
             </div>

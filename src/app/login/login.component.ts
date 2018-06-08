@@ -62,6 +62,11 @@ export class LoginComponent implements OnInit {
     //     horizontalPosition: 'right',
     //   });
   }
+
+  cancel() {
+    this.router.navigate(['/register']);
+}
+
 }
 
 
