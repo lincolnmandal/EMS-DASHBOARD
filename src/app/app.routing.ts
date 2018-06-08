@@ -10,17 +10,17 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CustomerListComponent } from './customer/customer-list.component';
 import { DetailComponent } from './customer/details/detail.component';
-import { EmployerDetailGuard } from './customer/details/customer-details-guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: '**', redirectTo: 'home' },
   { path: 'user-profile', component: ProfileComponent },
   { path: 'contact', component: ContactComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  {path: 'customer', component: CustomerListComponent},
-  {path: 'customers/:id',canActivate: [EmployerDetailGuard], component:DetailComponent }
+  { path: 'customer', component: CustomerListComponent },
+  { path: 'customers/:id', component: DetailComponent }
 ];
 
 @NgModule({

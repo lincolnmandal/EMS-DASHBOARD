@@ -20,7 +20,6 @@ import { EmployeeService } from './shared/stepper.service';
 import { AuthService } from './shared/auth.service';
 import { CustomerListComponent } from './customer/customer-list.component';
 import { DetailComponent } from './customer/details/detail.component';
-import { EmployerDetailGuard } from './customer/details/customer-details-guard';
 
 @NgModule({
   imports: [
@@ -46,7 +45,7 @@ import { EmployerDetailGuard } from './customer/details/customer-details-guard';
     DetailComponent
   ],
 
-  providers: [EmployeeService, AuthService, EmployerDetailGuard,],
+  providers: [EmployeeService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
