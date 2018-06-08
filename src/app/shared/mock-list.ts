@@ -10,6 +10,7 @@ export const ADMIN_DB = [
         color: ['Green'],
         status: 1,
         country: 'Nepal',
+        imageUrl:'../../assets/img/faces/ayo-ogunseinde-2.jpg'
     },
     {
         id: 2,
@@ -21,6 +22,7 @@ export const ADMIN_DB = [
         color: ['Pink'],
         status: 2,
         country: 'Bangladesh',
+        imageUrl:'../../assets/img/faces/binod.jpeg'
     },
 
     {
@@ -33,6 +35,7 @@ export const ADMIN_DB = [
         color: ['White'],
         status: 3,
         country: 'USA',
+        imageUrl:'../../assets/img/faces/clem-onojeghuo-2.jpg'
     },
     {
         id: 4,
@@ -44,6 +47,7 @@ export const ADMIN_DB = [
         color: ['Green', 'White'],
         status: 4,
         country: 'Germany',
+        imageUrl:'../../assets/img/faces/clem-onojeghuo-3.jpg'
     },
     {
         id: 5,
@@ -55,6 +59,7 @@ export const ADMIN_DB = [
         color: ['Green', 'Purple'],
         status: 4,
         country: 'Bhutan',
+        imageUrl:'../../assets/img/faces/erik-lucatero-2.jpg'
     },
     {
         id: 6,
@@ -66,6 +71,7 @@ export const ADMIN_DB = [
         color: ['Black', 'red'],
         status: 1,
         country: 'Afghanistan',
+        imageUrl:'../../assets/img/faces/ganesh.jpeg'
     },
     {
         id: 7,
@@ -77,6 +83,7 @@ export const ADMIN_DB = [
         color: ['red', 'Blue'],
         status: 2,
         country: 'Maldives',
+        imageUrl:'../../assets/img/faces/hari.jpeg'
     },
     {
         id: 8,
@@ -88,6 +95,7 @@ export const ADMIN_DB = [
         color: ['White', 'Pink'],
         status: 4,
         country: 'China',
+        imageUrl:'../../assets/img/faces/jade.jpg'
     },
     {
         id: 9,
@@ -99,6 +107,7 @@ export const ADMIN_DB = [
         color: ['Yellow', 'Purple'],
         status: 3,
         country: 'Japan',
+        imageUrl:'../../assets/img/faces/joe-gardner-2.jpg'
     },
     {
         id: 10,
@@ -110,5 +119,6 @@ export const ADMIN_DB = [
         color: ['Black', 'White'],
         status: 1,
         country: 'North Korea',
+        imageUrl:'../../assets/img/faces/kaci-baum-2.jpg'
     }
 ];
