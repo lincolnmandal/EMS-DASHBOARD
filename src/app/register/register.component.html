@@ -1,10 +1,10 @@
 <div class="wrapper">
-    <div [@routerTransition] class="section section-image section-register" style="background-image: url('assets/img/login-image.jpg');">
+    <div [@routerTransition] class="section section-image section-register" style="background-image: url('assets/img/bruno-abatti.jpg');">
         <div class="container">
             <br>
-            <!-- start reactive form -->
-            <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
-                <div style="background-color: #0b8e62; color: white;">
+            <div style="background-color: #0b8e62; color: white;">
+                <!-- start reactive form -->
+                <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
                     <div class="col-sm-6 col-sm-12">
                         <div class="row">
                             <div class="col-sm-12">
@@ -13,6 +13,23 @@
                                 <br>
                             </div>
                             <div class="col-sm-6">
+                                <!-- start imageUrl -->
+                                <div class="form-group row" [ngClass]="{'has-error': (registerForm.get('imageUrl').touched || registerForm.get('imageUrl').dirty) &&
+                      !registerForm.get('imageUrl').valid }">
+                                    <label class="col-sm-3 col-form-label">
+                                        <strong>Choose File * </strong>
+                                    </label>
+                                    <div class="col-sm-8">
+                                        <!-- <i style="position: relative;top: 24px;right: -310px;cursor: pointer;" class="fa fa-user"></i> -->
+                                        <input type="file" class="form-control form-control-sm" (change)="imageUpload($event)">
+                                        <span class="text-default" *ngIf="(registerForm.get('imageUrl').touched || registerForm.get('imageUrl').dirty) && 
+                           registerForm.get('imageUrl').errors">
+                                            <span *ngIf="registerForm.get('imageUrl').errors.required">Please select your image.</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- end imageUrl -->
+
                                 <!-- start firstName -->
                                 <div class="form-group row" [ngClass]="{'has-error': (registerForm.get('firstName').touched || registerForm.get('firstName').dirty) &&
                   !registerForm.get('firstName').valid }">
@@ -163,20 +180,26 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                    <br>
+                    <!-- start actions -->
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success active" style="margin-right: 8px;cursor:pointer;" [disabled]="!registerForm.valid">
+                            <i class="fa fa-registered"></i> Register</button>
+                        <button class="btn btn-warning" style="cursor:pointer;" (click)="cancel()">
+                            <i class="fa fa-arrow-circle-right fa-lg"></i> Cancel</button>
+                    </div>
+                    <!-- end actions -->
+                </form>
+                <!-- end reactive form -->
                 <br>
-                <!-- start actions -->
-                <div class="text-center">
-                    <button type="submit" class="btn btn-success active" style="margin-right: 8px;cursor:pointer;" [disabled]="!registerForm.valid">Register</button>
-                    <button class="btn btn-warning" style="cursor:pointer;" (click)="cancel()">Cancel</button>
-                </div>
-                <!-- end actions -->
-            </form>
-            <!-- end reactive form -->
+                <br>
+            </div>
             <br>
-            <p style="color: white; text-align:center">Or</p>
-            <div class="col text-center" routerLinkActive="active">
-                <a [routerLink]="['/login']" class="btn btn-outline-neutral btn-round btn-lg">View login Page</a>
+            <div style="color: white;" class="text-center" routerLinkActive="active">
+                <p>Go to Login Page:
+                    <a class="btn btn-outline-neutral" [routerLink]="['/login']">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i> View Login</a>
+                </p>
             </div>
         </div>
     </div>
