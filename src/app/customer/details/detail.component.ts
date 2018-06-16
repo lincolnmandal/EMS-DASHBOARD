@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { Router, Params, ActivatedRoute } from '@angular/router';
-import { IEmployee } from '../../shared/interface';
 import 'rxjs/add/operator/switchMap';
-import { EmployeeService } from '../../shared/stepper.service';
+import { IEmployee } from '../../shared/interface';
+import { EmployeeService } from '../../shared/employee.service';
 
 @Component({
     moduleId: module.id,
@@ -14,7 +14,7 @@ export class DetailComponent {
 
     employee: IEmployee;
     pageTitle: string = 'Customer Details';
-    imageWidth: number = 200;
+    imageWidth: number = 250;
 
     constructor(
         private router: Router,
