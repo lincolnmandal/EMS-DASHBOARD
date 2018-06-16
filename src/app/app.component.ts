@@ -9,7 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    // styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 
@@ -49,12 +49,12 @@ export class AppComponent implements OnInit {
             body.classList.add('ie-background');
 
         }
-
     }
+    
     removeFooter() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
         titlee = titlee.slice( 1 );
-        if(titlee === 'signup' || titlee === 'nucleoicons'){
+        if(titlee === 'login' || titlee === 'register'){
             return false;
         }
         else {
