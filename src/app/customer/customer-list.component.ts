@@ -1,40 +1,27 @@
-import {
-    Component, OnInit, ComponentFactoryResolver, ViewChildren,
-    ViewContainerRef, QueryList, AfterViewInit, ViewChild, ComponentFactory, Input
-} from '@angular/core';
-import { Router, ActivatedRoute } from "@angular/router";
-
-
-import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { Component, OnInit} from '@angular/core';
+import { Router } from "@angular/router";
 import 'rxjs/add/observable/range';
-
-import { filter, map, delay, delayWhen, flatMap } from 'rxjs/operators';
-import { of } from 'rxjs/observable/of';
-import { merge } from 'rxjs/observable/merge';
-import { ADMIN_DB } from '../shared/mock-list';
 import { IEmployee } from '../shared/interface';
-import { EmployeeService } from '../shared/stepper.service';
-import { routerTransition } from '../router.animations';
+import { EmployeeService } from '../shared/employee.service';
 
 @Component({
     selector: 'customer-list',
     templateUrl: 'customer-list.component.html',
-    styles: [`
-    .a {
-        cursor: pointer;
-    }
-    .table-bordered {
-        border: 1px solid #d5dbe0;
-        color: snow;
-    }
-`],
+//     styles: [`
+//     .a {
+//         cursor: pointer;
+//     }
+//     .table-bordered {
+//         border: 1px solid #d5dbe0;
+//         color: snow;
+//     }
+// `],
 })
 export class CustomerListComponent implements OnInit {
 
     employees: IEmployee[];
-    imageWidth: number = 50;
-    showImage: boolean = false;
+    imageWidth: number = 60;
+    showImage: boolean = true;
     selectedEmployeeId: number = null;
 
     constructor(
