@@ -1,9 +1,8 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, Validators, FormGroup, } from '@angular/forms';
 import { Router } from '@angular/router';
-import { trigger, transition, animate, style, state } from "@angular/animations";
+import { EmployeeService } from '../shared/employee.service';
 import { routerTransition } from '../router.animations';
-import { EmployeeService } from '../shared/stepper.service';
 
 @Component({
     templateUrl: 'register.component.html',
