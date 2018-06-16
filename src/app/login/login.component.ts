@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { trigger, transition, animate, style, state } from "@angular/animations";
-import { routerTransition } from '../router.animations';
 import { AuthService } from '../shared/auth.service';
+import { routerTransition } from '../router.animations';
 
 
 @Component({
@@ -27,7 +26,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private route: ActivatedRoute,
     private router: Router,
     private fb: FormBuilder,
   ) {
